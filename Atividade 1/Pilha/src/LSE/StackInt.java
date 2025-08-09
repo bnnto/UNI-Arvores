@@ -2,13 +2,11 @@ package LSE;
 
 public class StackInt {
     private StackNode inicio;
-    private StackNode fim;
     private int qntd;
     private int capacidade;
 
     public StackInt(int capacidade){
         this.inicio = null;
-        this.fim = null;
         this.qntd = 0;
         this.capacidade = capacidade;
     }
@@ -23,10 +21,6 @@ public class StackInt {
         novo.prox = inicio;
         inicio = novo;
 
-        if(qntd == 0){
-            fim = novo;
-        }
-
         qntd++;
     }
 
@@ -40,10 +34,6 @@ public class StackInt {
         inicio = inicio.prox;
         qntd--;
         
-        if(qntd == 0){  
-            fim = null;
-        }
-
         return e;
     }   
 
@@ -63,5 +53,20 @@ public class StackInt {
         }
 
         return inicio.elemento;
+    }
+
+    public void mostrar() {
+        if (isEmpty()) {
+            System.out.println("Pilha vazia!!");
+            return;
+        }
+
+        System.out.print("Pilha: ");
+        StackNode aux = inicio;
+        while (aux != null) {
+            System.out.print(aux.elemento + " ");
+            aux = aux.prox;
+        }
+        System.out.println();
     }
 }
