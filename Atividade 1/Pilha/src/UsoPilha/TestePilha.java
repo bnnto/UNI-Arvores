@@ -10,7 +10,7 @@ public class TestePilha {
             p1.push(20);
         }
         if(p1.isFull() == false){
-            p1.push(35);
+            p1.push(35);    
         }
         if(p1.isFull() == false){
             p1.push(50);

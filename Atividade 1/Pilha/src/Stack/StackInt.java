@@ -6,7 +6,7 @@ public class StackInt {
     public void push(Integer valor){
         StackNode novo;
         novo = new StackNode(valor);
-        novo.setProx(this.topo);
+        novo.setProx(this.topo);        
         this.topo = novo;
     }
 
