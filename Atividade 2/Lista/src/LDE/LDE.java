@@ -5,11 +5,7 @@ import Dados.Produto;
 public class LDE {
     private LDENode primeiro;
     private LDENode ultimo;
-    private Integer qtd;
-
-    public LDE(){
-        this.qtd = 0;
-    }
+    private int qtd;
 
     public void inserir(Produto produto){
         LDENode novo;
@@ -65,19 +61,30 @@ public class LDE {
         return false;
     }
 
+    public boolean isEmpty(){
+        if (this.qtd == 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
     public Produto buscar(String codigo){
-        LDENode atual = primeiro;
-        Produto produtoTemp;
-        produtoTemp = new Produto(codigo);
+        LDENode atual = this.primeiro;
+        Produto produtoTemp = new Produto(codigo);
+
+        if(this.isEmpty() == true){
+            return null;
+        } 
 
         while(atual != null){
             if(atual.getInfo().compareTo(produtoTemp) == 0){
                 return atual.getInfo();
-            }
-            if(atual.getInfo().compareTo(produtoTemp) > 0){
+            } else if(atual.getInfo().compareTo(produtoTemp) > 0){
                 return null;
+            } else{
+                atual = atual.getProx();
             }
-            atual = atual.getProx();
         }
         return null;
     }

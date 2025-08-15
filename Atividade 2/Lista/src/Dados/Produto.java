@@ -3,22 +3,19 @@ package Dados;
 public class Produto implements Comparable<Produto>{
     private String codigo;
     private String descr;
-    private Double preco;
-    private Integer estoque;
+    private double preco;
+    private int estoque;
 
     public Produto(String codigo){
         this.codigo = codigo;
-        this.descr = "";
-        this.preco = 0.0;
-        this.estoque = 0;
     }
     public void setDescr(String descr){
         this.descr = descr;
     }
-    public void setPreco(Double preco){
+    public void setPreco(double preco){
         this.preco = preco;
     }
-    public void setEstoque(Integer estoque){
+    public void setEstoque(int estoque){
         this.estoque = estoque;
     }
     public String getCodigo(){
@@ -27,20 +24,20 @@ public class Produto implements Comparable<Produto>{
     public String getDescr(){
         return this.descr;
     }
-    public Double getPreco(){
+    public double getPreco(){
         return this.preco;
     }
-    public Integer getEstoque(){
+    public int getEstoque(){
         return this.estoque;
     }
     public String toString(){
-        return "Codigo: " + codigo +
-               ", Descricao: " + descr +
-               ", Preco: R$ " + preco +
-               ", Estoque: " + estoque;
+        return "Codigo: " + this.codigo +
+               ", Descricao: " + this.descr +
+               ", Preco: R$ " + this.preco +
+               ", Estoque: " + this.estoque;
     }
     @Override
-    public int compareTo(Produto outro){
-        return this.codigo.compareTo(outro.getCodigo());
+    public int compareTo(Produto p){
+        return this.codigo.compareTo(p.codigo);
     }
 }

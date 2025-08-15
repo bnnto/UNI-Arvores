@@ -1,7 +1,7 @@
 package Aplicacao;
 
-import Dados.Cadastro;
 import java.util.Scanner;
+import Cadastro.Cadastro;
 
 public class TesteLista {
     public static void main(String[] args) throws Exception {

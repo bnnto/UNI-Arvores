@@ -1,5 +1,6 @@
-package Dados;
+package Cadastro;
 
+import Dados.Produto;
 import LDE.LDE;
 
 public class Cadastro {

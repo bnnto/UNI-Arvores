@@ -5,14 +5,18 @@ import Dados.Produto;
 class LDENode {
     private Produto info;
     private LDENode prox;
+    private LDENode ant;
 
     LDENode(Produto info){
         this.info = info;
     }
-    void setProx(LDENode novoProx){
+    public void setProx(LDENode novoProx){
         this.prox = novoProx;
     }
-    void setInfo(Produto info){
+    public void setAnt(LDENode novoAnt){
+        this.ant = novoAnt;
+    }
+    public void setInfo(Produto info){
         this.info = info;
     }
     LDENode getProx(){
@@ -20,5 +24,8 @@ class LDENode {
     }
     Produto getInfo(){
        return this.info;
+    }
+    LDENode getAnt(){
+        return this.ant;
     }
 }
